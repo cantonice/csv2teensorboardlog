@@ -5,6 +5,8 @@
 ## 功能特点
 
 - 将单个或多个 CSV 训练日志文件转换为 TensorBoard 日志文件
+- 递归搜索：自动在指定目录及其所有子目录中查找 CSV 文件
+- 保留目录结构：在 TensorBoard 中保持原始的目录组织结构
 - 自动处理无效值 (NaN, inf)
 - 计算并添加聚合指标（如总损失）
 - 支持批量处理目录中的所有 CSV 文件
@@ -47,7 +49,7 @@ python csv_to_tensorboard.py --csv_file /path/to/model_log.csv --model_name yolo
 | 参数 | 说明 |
 |------|------|
 | `--csv_file` | 单个 CSV 文件的路径 |
-| `--csv_dir` | 包含多个 CSV 文件的目录 |
+| `--csv_dir` | 包含多个 CSV 文件的目录（将递归搜索所有子目录） |
 | `--output_dir` | 输出 TensorBoard 日志的目录 (默认: `runs/tensorboard_logs`) |
 | `--model_name` | 模型名称 (仅用于单个文件，默认使用 CSV 文件名) |
 
